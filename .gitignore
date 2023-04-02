@@ -1,0 +1,8 @@
+*.class
+*.jar
+bin/
+../javamosbach22-main/build/
+.gradle
+out/
+.idea/
+.idea_modules/
