@@ -6,18 +6,11 @@ import java.util.Objects;
 
 public class StudentImpl implements Student, Comparable {
 
-    private String firstName;
-
-    @Override
-    public String toString() {
-        return
-                "Student firstName=" + firstName + ", lastName=" + lastName + ", matrikelNummer=" + matrikelNummer;
-    }
-
-    private String lastName;
-    private double gradeAverage;
-    private int matrikelNummer;
-    private String course;
+    private String firstName;               // keine Zahl
+    private String lastName;                // keine Zahl
+    private double gradeAverage;            // zwischen 1.0 und 5.0
+    private int matrikelNummer;             // 7-stellig
+    private String course;                  // nur "Wirtschaftsinformatik" und "BWL"
 
     public StudentImpl(String firstName, String lastName, double gradeAverage, int matrikelNummer, String course) {
         this.firstName = firstName;
@@ -111,6 +104,11 @@ public class StudentImpl implements Student, Comparable {
 
     }
 
+    @Override
+    public String toString() {
+        return
+                "Student firstName=" + firstName + ", lastName=" + lastName + ", matrikelNummer=" + matrikelNummer;
+    }
 
     @Override
     public int compareTo(Object o) {

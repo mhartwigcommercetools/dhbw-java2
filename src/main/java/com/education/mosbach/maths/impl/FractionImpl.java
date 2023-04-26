@@ -1,5 +1,8 @@
 package com.education.mosbach.maths.impl;
 
+import com.education.mosbach.maths.api.DenominatorNotZeroException;
+import com.education.mosbach.maths.api.Fraction;
+
 public class FractionImpl implements com.education.mosbach.maths.api.Fraction {
 
     int nominator = 1;
@@ -25,6 +28,7 @@ public class FractionImpl implements com.education.mosbach.maths.api.Fraction {
     }
 
     public void setDenominator(int denominator) {
+        if (denominator == 0) throw new DenominatorNotZeroException();
         this.denominator = denominator;
     }
 
@@ -41,5 +45,13 @@ public class FractionImpl implements com.education.mosbach.maths.api.Fraction {
         setNominator(nominator / greatestCommonDivisor);
     }
 
+    public static void main(String[] args) {
+        Fraction fraction = new FractionImpl(17, 24);
+        try {
+            fraction.setDenominator(0);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
 }
