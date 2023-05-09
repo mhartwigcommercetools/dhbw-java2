@@ -4,15 +4,16 @@ import com.education.mosbach.dhbw.api.Student;
 import com.education.mosbach.dhbw.impl.StudentImpl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DummyStudentPlay {
 
-    public void swap(ArrayList<Student> myStudents, int pos1, int pos2) {
+    public void swap(List<Student> myStudents, int pos1, int pos2) {
         Student temp = myStudents.get(pos1);
         myStudents.set(pos1, myStudents.get(pos2));
         myStudents.set(pos2, temp);
     }
-    public ArrayList<Student> sortStudents(ArrayList<Student> myStudents) {
+    public List<Student> sortStudents(List<Student> myStudents) {
 
         for (int j = 0; j < myStudents.size() - 1; j++)
                 for (int i = 0; i < myStudents.size() - 1; i++) {
@@ -22,11 +23,9 @@ public class DummyStudentPlay {
         return myStudents;
     }
 
-
-
     public static void main(String[] args) {
 
-        ArrayList<Student> myStudents = new ArrayList<>();
+        List<Student> myStudents = new ArrayList<>();
         myStudents.add(new StudentImpl(
                 "Jonas",
                 "Scherpf",
