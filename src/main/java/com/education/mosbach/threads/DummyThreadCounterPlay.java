@@ -21,13 +21,9 @@ public class DummyThreadCounterPlay {
         }
         long afterSingleThread = System.currentTimeMillis();
 
-        // nochmal, aber mit Threads
-        ModThreeCounterThread thread1 = new ModThreeCounterThread(0, 100_000_000, numbers);
-        ModThreeCounterThread thread2 = new ModThreeCounterThread(100_000_001, 200_000_000, numbers);
-        ModThreeCounterThread thread3 = new ModThreeCounterThread(200_000_001, 299_999_999, numbers);
-
-        // Change back to Runnable
-        Thread thread4 = new Thread(new ModThreeCounterThread(0, 100_000_000, numbers));
+        Thread thread1 = new Thread(new ModThreeCounterThread(0, 100_000_000, numbers));
+        Thread thread2 = new Thread(new ModThreeCounterThread(100_000_001, 200_000_000, numbers));
+        Thread thread3 = new Thread(new ModThreeCounterThread(200_000_001, 299_999_999, numbers));
 
         long beforeThreeThread = System.currentTimeMillis();
         thread1.start();
